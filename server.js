@@ -25,6 +25,10 @@ app.get("/api/users", (req, res) => {
     res.json(data);
 });
 
+app.get("/api/users/:id", (req, res) => {
+    res.json(data.filter(u => u.id === req.params.id)[0]);
+});
+
 // Add a new route to get a *SINGLE* user (you can use either path param or query param)
 // /api/users/1      <-- path param (req.params.id)
 // /api/users?id=1   <-- query param (req.query.id)
